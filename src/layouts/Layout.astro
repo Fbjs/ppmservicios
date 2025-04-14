@@ -14,7 +14,7 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 import ContactUs from '~/components/widgets/ContactForm.astro';
 
 // Comment the line below to disable View Transitions
-import { ViewTransitions } from 'astro:transitions';
+//import { ViewTransitions } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
 
@@ -30,13 +30,6 @@ const { language, textDirection } = I18N;
 <!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px] ">
   <head>
-    <script>
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "q496d9uvoq");
-    </script>
     <CommonMeta />
     <Favicons />
     <CustomStyles />
@@ -50,7 +43,7 @@ const { language, textDirection } = I18N;
     <script src="//unpkg.com/alpinejs" defer></script-->
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <body class="antialiased text-default tracking-tight bg-[var(--aw-color-bg-page)] dark:bg-[var(--aw-color-bg-page)]">
     <style>
       /* Estilo para el contenedor del video */
     .video-fondo {

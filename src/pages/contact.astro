@@ -1,20 +1,17 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import FondoVideo from '~/layouts/FondoVideo.astro';
 
 const metadata = {
-  title: 'Contacto - Neighbour Technology',
+  title: 'Contacto - PPM Servicios',
   ignoreTitleTemplate: true
 };
 ---
 
 <Layout metadata={metadata}>
-  <FondoVideo src="/videos/calle2.mp4" />
-
-  <HeroText tagline="Contacto" title="¡Conectémonos!" />
+  <FondoVideo src="/videos/Hero_inpection.mp4" />
 
   <div class="relative bg-mapa">
     <!-- Contenido del div -->
@@ -22,7 +19,7 @@ const metadata = {
       <ContactUs
         id="form"
         title="¡Envíanos un mensaje hoy mismo!"
-        subtitle="Para respuestas más rápidas, explora nuestra sección de preguntas frecuentes. ¡Quizás encuentres la solución que buscas ahí! Si no, nuestro equipo de soporte estará encantado de ayudarte."
+        subtitle="Nuestro equipo está listo para ayudarte con cualquier consulta o solicitud. Completa el formulario y nos pondremos en contacto contigo lo antes posible."
         inputs={[
           {
             type: 'text',
@@ -55,17 +52,17 @@ const metadata = {
         items={[
           {
             title: 'Soporte general',
-            description: `Chatea con nosotros para consultas relacionadas con la gestión de cuentas, navegación en el sitio web, problemas de pago o preguntas generales sobre el funcionamiento de nuestro sitio.`,
+            description: `Contáctanos para consultas relacionadas con la gestión de cuentas, navegación en el sitio web, problemas de pago o preguntas generales sobre nuestros servicios.`,
           },
           {
             title: 'Contacto ventas',
             description:
-              'Chatea con nosotros para preguntas sobre compras, opciones de personalización, licencias para uso comercial, o consultas sobre productos específicos.',
+              'Contáctanos para preguntas sobre repuestos, opciones de personalización, licencias para uso comercial o consultas sobre productos específicos.',
           },
           {
             title: 'Soporte técnico',
             description:
-              'Chatea con nosotros si tienes problemas de instalación, dificultades para editar, problemas de compatibilidad con software o errores de descarga, o cualquier desafío técnico relacionado con nuestros productos.',
+              'Contáctanos si tienes problemas con la instalación, mantenimiento de equipos, dificultades técnicas o cualquier desafío relacionado con nuestros servicios.',
           },
           {
             title: 'Teléfono',
@@ -74,18 +71,16 @@ const metadata = {
           },
           {
             title: 'Correo electrónico',
-            description: 'contacto@neighbour.cl',
+            description: 'ppacheco@ppmchile.com',
             icon: 'tabler:mail',
           },
           {
             title: 'Ubicación',
-            description: 'Av. Apoquindo 6410. Las Condes, Chile',
+            description: 'Camino Santa Rosa de Santiago 3040, Parcela 204, Lampa – Santiago, Chile',
             icon: 'tabler:map-pin',
           },
         ]}
       />
     </div>
   </div>
-
-  
 </Layout>

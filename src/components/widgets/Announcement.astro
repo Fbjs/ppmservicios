@@ -1,13 +1,13 @@
 <div
-  class="z-50 dark text-muted text-sm bg-black  dark:border-b dark:border-slate-800 dark:text-slate-400 hidden md:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap justify-between"
+  class="z-50 dark text-muted text-sm bg-black dark:border-b dark:border-slate-800 dark:text-slate-400 hidden md:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap justify-between"
 >
   <div class="flex gap-2">
     <span
       class="dark:bg-slate-700 bg-white/40 dark:text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block"
-      >NEW</span
+      >NUEVO</span
     >
-    <a id="dynamic-link" href="/services/web-page" class="text-muted hover:underline dark:text-slate-400 font-medium"
-      >¡Descubre cómo optimizamos sitios web para mejorar tu negocio!»</a
+    <a id="dynamic-link" href="/services/mantencion-preventiva" class="text-muted hover:underline dark:text-slate-400 font-medium"
+      >¡Conoce nuestros planes de mantención preventiva para maquinaria pesada!</a
     >
   </div>
 
@@ -24,16 +24,20 @@
 <script>
   const news = [
     {
-      text: "¡Descubre cómo optimizamos sitios web para mejorar tu negocio!",
-      link: "/services/web-page",
+      text: "¡Conoce nuestros planes de mantención preventiva para maquinaria pesada!",
+      link: "/services/mantencion-preventiva",
     },
     {
-      text: "¿Sabías que podemos optimizar tus procesos empresariales? Conoce más.",
-      link: "/services/optimizacion-procesos",
+      text: "¿Necesitas repuestos especializados? Descubre nuestras soluciones.",
+      link: "/repuestos",
     },
     {
-      text: "Aumenta tus ventas con nuestras estrategias de marketing digital.",
-      link: "/services/marketing-digital",
+      text: "Servicio spot en terreno: ¡Atención rápida y eficiente donde lo necesites!",
+      link: "/services/servicio-spot",
+    },
+    {
+      text: "Automatización de equipos: Lleva tu maquinaria al siguiente nivel.",
+      link: "/services/automatizacion",
     }
   ];
 
@@ -60,11 +64,10 @@
   window.addEventListener('load', startNewsRotation);
   window.addEventListener('beforeunload', stopNewsRotation);
 
-  // También puedes agregar esta comprobación para evitar que funcione si el elemento deja de existir
   const observer = new MutationObserver(() => {
     if (!document.getElementById('dynamic-link')) {
       stopNewsRotation();
-      observer.disconnect(); // Detenemos el observer cuando ya no es necesario
+      observer.disconnect();
     }
   });
 

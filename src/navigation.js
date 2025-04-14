@@ -1,182 +1,87 @@
-import { getPermalink, /*getBlogPermalink, getAsset*/ } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
-  links:[
+  links: [
     {
       text: 'Inicio',
       href: '/',
     },
     {
-      text: 'Nosotros',
-      href: getPermalink('/about'),
+      text: 'Empresa',
+      links: [
+        {
+          text: '¿Quiénes somos?',
+          href: getPermalink('/about#quienes-somos'),
+        },
+        {
+          text: 'Visión y Misión',
+          href: getPermalink('/about#vision-mision'),
+        },
+        {
+          text: '¿Dónde trabajamos?',
+          href: getPermalink('/about#ubicacion'),
+        },
+      ],
     },
     {
       text: 'Servicios',
       links: [
         {
-          text: 'Landing Page',
-          href: '/services/Landing-Page',
+          text: 'Mantención preventiva',
+          href: getPermalink('/services/mantencion-preventiva'),
         },
         {
-          text: 'Smart360',
-          href: 'https://smart360.cl',
+          text: 'Servicio spot en terreno',
+          href: getPermalink('/services/servicio-spot'),
         },
         {
-          text: 'Soluciones Digitales',
-          href: '/services/Soluciones-Digitales',
+          text: 'Automatización de equipos',
+          href: getPermalink('/services/automatizacion'),
         },
         {
-          text: 'Otras Especialidades',
-          href: '/#Features2',
+          text: 'Scanner y programación de motores',
+          href: getPermalink('/services/scanner-programacion'),
         },
         {
-          text: 'Mantencion y Soporte Técnico',
-          href: '/services/Mantencion-y-Soporte-Tecnico',
+          text: 'Frenos y revisión técnica',
+          href: getPermalink('/services/frenos-revision'),
         },
         {
-          text: 'Hosting y Datacenter',
-          href: '/services/Hosting-y-Datacenter',
-        }        
-      ]
+          text: 'Calibración de blowers',
+          href: getPermalink('/services/calibracion-blowers'),
+        },
+        {
+          text: 'Ajuste hidráulico y eléctrico',
+          href: getPermalink('/services/ajuste-hidraulico-electrico'),
+        },
+        {
+          text: 'Remontaje de equipos',
+          href: getPermalink('/services/remontaje'),
+        },
+      ],
     },
     {
-      text: 'Productos',
+      text: 'Especialidades',
       links: [
         {
-          text: 'Canales Digitales',
-          href: '/product/canales-digitales',
+          text: 'Equipos',
+          href: getPermalink('/specialties/equipos'),
         },
         {
-          text: 'CRM Fenix',
-          href: '/product/fenix',
+          text: 'Técnicas',
+          href: getPermalink('/specialties/tecnicas'),
         },
-        {
-          text: 'ERP Hydra',
-          href: '/product/erp',
-        }
-      ]
+      ],
+    },
+    {
+      text: 'Repuestos',
+      href: getPermalink('/repuestos'),
     },
     {
       text: 'Contacto',
       href: getPermalink('/contact'),
     },
   ],
-
-  /*links: [
-    {
-      text: 'Homes',
-      links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
-    },
-    {
-      text: 'Pages',
-      links: [
-        {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
-      ],
-    },
-    {
-      text: 'Landing',
-      links: [
-        {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
-        },
-        {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
-        },
-      ],
-    },
-    {
-      text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
-    },
-    {
-      text: 'Widgets',
-      href: '#',
-    },
-  ],*/
-  //actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
 
 export const footerData = {
@@ -185,63 +90,68 @@ export const footerData = {
       title: 'Servicios',
       links: [
         {
-          text: 'Landing Page',
-          href: '/services/Landing-Page',
+          text: 'Mantención preventiva',
+          href: getPermalink('/services/mantencion-preventiva'),
         },
         {
-          text: ' Agencia de Marketing',
-          href: 'https://smart360.cl',
+          text: 'Servicio spot en terreno',
+          href: getPermalink('/services/servicio-spot'),
         },
         {
-          text: 'Soluciones Digitales',
-          href: '/services/Soluciones-Digitales',
+          text: 'Automatización de equipos',
+          href: getPermalink('/services/automatizacion'),
         },
         {
-          text: 'Vicidial',
-          href: '/services/Vicidial',
+          text: 'Scanner y programación de motores',
+          href: getPermalink('/services/scanner-programacion'),
         },
         {
-          text: 'Mantencion y Soporte Técnico',
-          href: '/services/Mantencion-y-Soporte-Tecnico',
+          text: 'Frenos y revisión técnica',
+          href: getPermalink('/services/frenos-revision'),
         },
         {
-          text: 'Hosting y Datacenter',
-          href: '/services/Hosting-y-Datacenter',
-        }
-      ]
+          text: 'Calibración de blowers',
+          href: getPermalink('/services/calibracion-blowers'),
+        },
+      ],
     },
     {
-      title: 'Productos',
+      title: 'Especialidades',
       links: [
         {
-          text: 'Canales Digitales',
-          href: '/product/canales-digitales',
+          text: 'Equipos',
+          href: getPermalink('/specialties/equipos'),
         },
         {
-          text: 'CRM Fenix',
-          href: '/product/fenix',
+          text: 'Técnicas',
+          href: getPermalink('/specialties/tecnicas'),
         },
-        {
-          text: 'ERP hydra',
-          href: '/product/erp',
-        },
-        
-      ]
+      ],
     },
-    
-  ],
-  secondaryLinks: [
-    //{text: 'Terms', href: getPermalink('/terms') },
-    //{ text: 'Privacy Policy', href: getPermalink('/privacy') },
+    {
+      title: 'Repuestos',
+      links: [
+        {
+          text: 'Filtros manga y canastillos',
+          href: getPermalink('/repuestos/filtros'),
+        },
+        {
+          text: 'Wika, Hirschmann, Creer, Kruger',
+          href: getPermalink('/repuestos/marcas'),
+        },
+        {
+          text: 'Kits mineros y pedidos especiales',
+          href: getPermalink('/repuestos/kits-mineros'),
+        },
+      ],
+    },
   ],
   socialLinks: [
     { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/neighbour-spa/' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/neighbour_spa' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/profile.php?id=100066527478611&mibextid=ZbWKwL' },
-    //{ ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    //{ ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://neighbour.cl/"> Neighbour</a> · All rights reserved.
+    Made by <a class="text-blue-600 underline dark:text-muted" href="https://neighbour.cl/">Neighbour</a> · All rights reserved.
   `,
 };

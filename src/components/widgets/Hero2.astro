@@ -1,7 +1,7 @@
 ---
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
-import Background from '~/components/ui/Background.astro';
+//import Background from '~/components/ui/Background.astro';
 import type { Hero as Props } from '~/types';
 
 const {
@@ -21,7 +21,7 @@ const {
 ---
 
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none bg-dark bg-opacity-60" aria-hidden="true">
+  <div class="absolute inset-0 pointer-events-none bg-[var(--aw-color-primary)] bg-opacity-60" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
@@ -34,7 +34,7 @@ const {
         {
           tagline && (
             <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+              class="text-base text-[var(--aw-color-secondary)] dark:text-[var(--aw-color-accent)] font-bold tracking-wide uppercase"
               set:html={tagline}
             />
           )
@@ -42,14 +42,14 @@ const {
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-[var(--aw-color-text-heading)] dark:text-[var(--aw-color-text-default)]"
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl mx-auto lg:max-w-none">
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
-          {subsubtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subsubtitle} />}
+          {subtitle && <p class="text-xl text-[var(--aw-color-text-muted)] dark:text-[var(--aw-color-text-muted)] mb-6" set:html={subtitle} />}
+          {subsubtitle && <p class="text-xl text-[var(--aw-color-text-muted)] dark:text-[var(--aw-color-text-muted)] mb-6" set:html={subsubtitle} />}
 
           {
             actions && (
@@ -57,7 +57,7 @@ const {
                 {Array.isArray(actions) ? (
                   actions.map((action) => (
                     <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
+                      <Button {...(action || {})} class="w-full sm:mb-0 text-[var(--aw-color-text-heading)] dark:text-[var(--aw-color-text-default)] bg-[var(--aw-color-accent)] dark:bg-[var(--aw-color-secondary)]" />
                     </div>
                   ))
                 ) : (

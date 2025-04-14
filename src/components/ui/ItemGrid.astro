@@ -11,7 +11,7 @@ const {
   panel: panelClass = '',
   title: titleClass = '',
   description: descriptionClass = '',
-  icon: defaultIconClass = 'text-primary',
+  icon: defaultIconClass = 'text-[var(--aw-color-secondary)] dark:text-[var(--aw-color-accent)]',
   action: actionClass = '',
 } = classes;
 ---
@@ -33,26 +33,50 @@ const {
       )}
     >
       {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div id="fadeText" class="relative p-4 rounded-lg bg-dark bg-opacity-60 backdrop-blur fondo-oscuro">
+        <div class="relative p-4 rounded-lg bg-[var(--aw-color-bg-page)] dark:bg-[var(--aw-color-bg-page-dark)] backdrop-blur">
           <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
                 <Icon
                   name={icon || defaultIcon}
-                  class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2 elemento-izquierda', defaultIconClass, itemClasses?.icon)}
+                  class={twMerge(
+                    'w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2',
+                    defaultIconClass,
+                    itemClasses?.icon
+                  )}
                 />
               )}
             </div>
             <div class="mt-0.5">
-              {title && <h3 class={twMerge('text-xl font-bold elemento-derecha text-white', titleClass, itemClasses?.title)}>{title}</h3>}
+              {title && (
+                <h3
+                  class={twMerge(
+                    'text-xl font-bold text-[var(--aw-color-text-heading)] dark:text-[var(--aw-color-text-default)]',
+                    titleClass,
+                    itemClasses?.title
+                  )}
+                >
+                  {title}
+                </h3>
+              )}
               {description && (
                 <p
-                  class={twMerge(`${title ? 'mt-3 elemento-derecha' : ''} text-gray-100`, descriptionClass, itemClasses?.description)}
+                  class={twMerge(
+                    `${title ? 'mt-3' : ''} text-[var(--aw-color-text-muted)] dark:text-[var(--aw-color-text-muted)]`,
+                    descriptionClass,
+                    itemClasses?.description
+                  )}
                   set:html={description}
                 />
               )}
               {callToAction && (
-                <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
+                <div
+                  class={twMerge(
+                    `${title || description ? 'mt-3' : ''}`,
+                    actionClass,
+                    itemClasses?.actionClass
+                  )}
+                >
                   <Button variant="link" {...callToAction} />
                 </div>
               )}

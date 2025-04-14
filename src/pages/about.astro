@@ -1,173 +1,117 @@
 ---
-//import Features2 from '~/components/widgets/Features2.astro';
-//import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
+//import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
+import Steps3 from '~/components/widgets/Steps3.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-//import image2 from '~/assets/images/FENIX_contact_center.png';
-import FondoVideo from "~/layouts/FondoVideo.astro";
+import Team from '~/assets/images/team.jpg';
+import Location from '~/assets/images/taller.jpg';
+import visionmision from '~/assets/images/vision-mision.jpg';
+
 
 const metadata = {
-  title: 'Sobre Nosotros - Neighbour Technology',
-  ignoreTitleTemplate: true
+  title: 'Sobre Nosotros - PPM Servicios',
+  ignoreTitleTemplate: true,
 };
 ---
-<FondoVideo src="/videos/digital.mp4" />
 <Layout metadata={metadata}>
-    <Hero
-      tagline="Sobre Nosotros"
-      image={{
-        src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-        alt: 'Office Image',
-      }}
-    >
-      <Fragment slot="title">
-        ¡Impulsa tu negocio al siguiente nivel! <br />
-        <span class="text-accent"> Soluciones Tecnológicas que Transforman</span>
-      </Fragment>
+  <!-- Hero Section -->
+  <Hero
+    id="quienes-somos"
+    tagline="Nuestra Empresa"
+    image={{
+      src: Team,
+      alt: 'Taller de PPM Servicios',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-[var(--aw-color-text-default)] dark:text-[var(--aw-color-text-default)]">¡Especialistas en maquinaria pesada!</span>
+      <span class="text-[var(--aw-color-accent)]">Mantenimiento y Reparación Integral</span>
+    </Fragment>
 
-      <Fragment slot="subtitle">
-        <span class="text-white">En Neighbour Technology, creamos soluciones innovadoras que transforman y potencian tu negocio. Con experiencia en el desarrollo de aplicaciones y sistemas de información, convertimos desafíos en oportunidades de éxito, garantizando excelencia, mejora continua y un enfoque colaborativo adaptado a tus necesidades.</span>
-      </Fragment>
-    </Hero>
-  
-  <!-- Stats Widget ****************** -->
+    <Fragment slot="subtitle">
+      <span class="text-[var(--aw-color-text-default)] dark:text-[var(--aw-color-text-default)]">
+        En PPM Servicios, somos una empresa fundada por un especialista en maquinaria con experiencia en empresas líderes del rubro. Ofrecemos servicios mecánicos para equipos especiales de minería, maquinaria pesada, flota liviana, buses y camiones. Nuestro enfoque es entregar un servicio integral con estándares de fabricante, cumpliendo con las exigencias de nuestros clientes.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- ¿Quiénes Somos? Section -->
+  <Features2
+    title="¿Quiénes Somos?"
+    subtitle="Somos una empresa comprometida con la excelencia, fundada por un especialista en maquinaria pesada con amplia experiencia en empresas líderes del rubro. Nuestro objetivo es ofrecer soluciones integrales para el mantenimiento y reparación de equipos de minería, maquinaria pesada, flota liviana, buses y camiones."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-[var(--aw-color-bg-page)] dark:bg-[var(--aw-color-bg-page-dark)]"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Stats Section 
   <Stats
     classes={{
-      container: ' bg-dark bg-opacity-70 my-10',
+      container: 'bg-[var(--aw-color-bg-page-dark)] text-[var(--aw-color-text-default)] my-10',
+      title: 'text-[var(--aw-color-accent)]',
+      amount: 'text-[var(--aw-color-secondary)] dark:text-[var(--aw-color-accent)]',
     }}
-    title="Estadísticas de Neighbour Technology"
+    title="Nuestras Estadísticas"
     stats={[
-      { title: 'Clientes Satisfechos', amount: '250',symbol:'+'},
-      { title: 'Proyectos Completados', amount: '600',symbol:'+'},
-      { title: 'Años de Experiencia', amount: '8',symbol:'+'},
-      { title: 'Expertos en Tecnología', amount: '30',symbol:'+'},
+      { title: 'Clientes Satisfechos', amount: '200', symbol: '+' },
+      { title: 'Proyectos Completados', amount: '500', symbol: '+' },
+      { title: 'Años de Experiencia', amount: '15', symbol: '+' },
+      { title: 'Expertos en el Equipo', amount: '30', symbol: '+' },
     ]}
-  />
+  />-->
 
-  <Steps2
-      title="Nuestros Valores"
-      subtitle="En Neighbour Technology, nos guiamos por los siguientes principios fundamentales."
-      items={[
-        {
-          title: 'Enfoque centrado en el cliente',
-          description:
-            'Nos esforzamos por comprender y satisfacer las necesidades de nuestros clientes.',
-        },
-        {
-          title: 'Mejora constante',
-          description:
-            'Siempre buscamos formas de mejorar nuestros servicios y procesos.',
-        },
-        {
-          title: 'Prácticas éticas',
-          description:
-            'Mantenemos un alto estándar de integridad y responsabilidad en todas nuestras operaciones.',
-        },
-      ]}
-    />
+  <!-- Visión y Misión Section -->
+  <section id="vision-mision" class="my-10">
+    <h2 class="text-2xl font-bold text-center text-[var(--aw-color-accent)]">Visión y Misión</h2>
+    <div class="mt-6">
+      <Steps2
+        image={visionmision}
+        items={[
+          {
+            title: 'Visión',
+            description:
+              'Convertirnos en líderes en ventas de repuestos, asesorías y mantenimiento de equipos de izaje, electricidad y minería en la Región Metropolitana.',
+          },
+          {
+            title: 'Misión',
+            description:
+              'Entregar un servicio integral con estándares de fabricante, cumpliendo con las exigencias de nuestros clientes y garantizando calidad en cada trabajo.',
+          },
+        ]}
+        classes={{
+          title: 'text-[var(--aw-color-text-heading)] dark:text-[var(--aw-color-text-default)]',
+          description: 'text-[var(--aw-color-text-muted)] dark:text-[var(--aw-color-text-muted)]',
+        }}
+      />
+    </div>
+  </section>
 
-    <!-- Steps2 Widget ****************** -->
-    
-
-  <!-- Features3 Widget ************** -->
-
-
-  
- <!-- <Features3
-    title="Nuestros Servicios"
-    subtitle="Ofrecemos una amplia gama de servicios tecnológicos para satisfacer las necesidades de nuestros clientes."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Mantenimiento y Reparación de Hardware',
-        description:
-          'Mantenimiento preventivo, reparaciones, actualizaciones, gestión de inventario y optimización de recursos.',
-        icon: 'tabler:tool',
-      },
-      {
-        title: 'Desarrollo de Software y Sistemas Informáticos',
-        description:
-          'Desarrollos web, intranet, sistemas de inventario, plataformas e-commerce, control documental y automatización de procesos.',
-        icon: 'tabler:code',
-      },
-      {
-        title: 'Outsourcing de Especialistas de Tecnología',
-        description:
-          'BackOffice, analista de datos, soporte técnico, desarrolladores, gestión de redes y consultoría TI.',
-        icon: 'tabler:users',
-      },
-    ]}
-  />
-
-   Features3 Widget ************** 
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'CRM Fénix Contact Center Suite',
-        description:
-          'Solución multicanal para mejorar la eficiencia, satisfacción del cliente y resultados empresariales.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Marketing Digital',
-        description:
-          'Campañas de generación de LEADS, Landing Pages y chatbots con análisis en tiempo real.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Data Center',
-        description:
-          'Infraestructura de vanguardia, conectividad ultrarrápida, y servicios de nube confiables.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Servicios TELCO',
-        description:
-          'Soluciones integrales de telecomunicaciones con telefonía IP y SMS eficientes.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Expertos en VICIdial y Asterisk',
-        description:
-          'Optimización de comunicaciones con soluciones líderes en telefonía IP.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />----->
-
-  <!-- Steps2 Widget ****************** -->
-  <!-- <div class="bg-fondo">
-    
-    <Features2
-      title="Nuestras Ubicaciones"
-      tagline="Encuéntranos en"
-      columns={4}
-      items={[
-        {
-          title: 'EE.UU',
-          description: '1234 Lorem Ipsum St, 12345, Miami',
-        },
-        {
-          title: 'España',
-          description: '5678 Lorem Ipsum St, 56789, Madrid',
-        },
-        {
-          title: 'Australia',
-          description: '9012 Lorem Ipsum St, 90123, Sydney',
-        },
-        {
-          title: 'Brasil',
-          description: '3456 Lorem Ipsum St, 34567, São Paulo',
-        },
-      ]}
-    />
-  </div>-->
-  </Layout>
+  <!-- ¿Dónde Trabajamos? Section -->
+  <section id="ubicacion" class="my-10">
+    <h2 class="text-2xl font-bold text-center text-[var(--aw-color-accent)]">¿Dónde trabajamos?</h2>
+    <div class="mt-6">
+      <Steps3
+        image={Location}
+        items={[
+          {
+            title: 'Taller Principal',
+            description:
+              '📍 Camino Santa Rosa de Santiago 3040, Parcela 204, Lampa – Santiago. Taller de 4500 m² equipado para atender tus necesidades.',
+          },
+          {
+            title: 'Atención en Terreno',
+            description:
+              '🚐 Ofrecemos atención en terreno dentro y fuera de Santiago, adaptándonos a tus requerimientos.',
+          },
+        ]}
+        classes={{
+          title: 'text-[var(--aw-color-text-heading)] dark:text-[var(--aw-color-text-default)]',
+          description: 'text-[var(--aw-color-text-muted)] dark:text-[var(--aw-color-text-muted)]',
+        }}
+      />
+    </div>
+  </section>
+</Layout>

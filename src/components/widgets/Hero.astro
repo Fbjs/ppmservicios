@@ -15,7 +15,7 @@ const {
 
   id,
   bg = await Astro.slots.render('bg'),
-  videoSrc,  // Añadir esta línea
+  videoSrc,
 } = Astro.props;
 ---
 
@@ -30,7 +30,7 @@ const {
         </video>
       )}
     </slot>
-    <div class="absolute inset-0 bg-dark bg-opacity-50"></div>
+    <div class="absolute inset-0 bg-[var(--aw-color-primary)] dark:bg-[var(--aw-color-primary)] bg-opacity-50"></div>
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
@@ -39,7 +39,7 @@ const {
         {
           tagline && (
             <p
-              class="h-tagline text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+              class="h-tagline text-base text-[var(--aw-color-accent)] dark:text-[var(--aw-color-accent)] font-bold tracking-wide uppercase"
               set:html={tagline}
             />
           )
@@ -47,20 +47,20 @@ const {
         {
           title && (
             <h1
-              class="h-title text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="h-title text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-[var(--aw-color-text-heading)] dark:text-[var(--aw-color-text-default)]"
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="h-subtitle text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          {subtitle && <p class="h-subtitle text-xl text-[var(--aw-color-text-muted)] dark:text-[var(--aw-color-text-muted)] mb-6" set:html={subtitle} />}
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
                 {Array.isArray(actions) ? (
                   actions.map((action) => (
                     <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0 text-white" />
+                      <Button {...(action || {})} class="w-full sm:mb-0 text-[var(--aw-color-text-heading)] dark:text-[var(--aw-color-text-default)] bg-[var(--aw-color-accent)] dark:bg-[var(--aw-color-secondary)]" />
                     </div>
                   ))
                 ) : (
